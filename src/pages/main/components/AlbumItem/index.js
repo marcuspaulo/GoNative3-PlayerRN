@@ -11,9 +11,9 @@ const AlbumItem = ({ album }) => (
     <View style={styles.info}>
       <Text style={styles.title}>{album.title}</Text>
       <Text style={styles.author}>{album.author}</Text>
-
-      <Icon name="more-horiz" size={24} style={styles.moreHoriz} />
     </View>
+
+    <Icon name="more-horiz" size={24} style={styles.moreHoriz} />
   </TouchableOpacity>
 );
 

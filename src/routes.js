@@ -2,8 +2,8 @@ import { createAppContainer, createStackNavigator } from "react-navigation";
 import { colors } from "styles";
 
 import Main from "pages/main";
-import Search from "pages/main";
-import Album from "pages/main";
+import Search from "pages/search";
+import Album from "pages/album";
 
 const Routes = createAppContainer(
   createStackNavigator(
