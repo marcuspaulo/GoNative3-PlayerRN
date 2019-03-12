@@ -198,3 +198,9 @@ $ react-native link react-native-gesture-handler
 ```sh
 $ yarn add color
 ```
+
+# Plugin para trabalhar com a Barra (antigo Botão Home do iPhone)
+
+```sh
+$ yarn add react-native-iphone-x-helper
+```

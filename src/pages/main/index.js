@@ -1,15 +1,12 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StatusBar,
-  TouchableOpacity,
-  FlatList
-} from "react-native";
+import PropTypes from "prop-types";
+import { View, StatusBar, TouchableOpacity, FlatList } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 import AlbumItem from "./components/AlbumItem";
 import styles from "./styles";
+
+import { colors } from "../../styles";
 
 const albums = [
   {
@@ -280,28 +277,43 @@ const albums = [
   }
 ];
 
-const Main = () => (
+const Main = ({ navigation }) => (
   <View style={styles.container}>
     <StatusBar barStyle="light-content" />
 
     <FlatList
       data={albums}
       keyExtractor={album => String(album.id)}
-      renderItem={({ item }) => <AlbumItem album={item} />}
+      renderItem={({ item }) => (
+        <AlbumItem
+          onPress={() => navigation.navigate("Album", { album: item })}
+          album={item}
+        />
+      )}
     />
   </View>
 );
 
 Main.navigationOptions = ({ navigation }) => ({
   title: "Sua Biblioteca",
+  headerTintColor: colors.white,
+  headerStyle: {
+    backgroundColor: colors.primary
+  },
   headerRight: (
     <TouchableOpacity
       style={styles.headerRight}
       onPress={() => navigation.navigate("Search")}
     >
-      <Icon name="search" size={24} color="#111" />
+      <Icon name="search" size={24} color={colors.white} />
     </TouchableOpacity>
   )
 });
+
+Main.propTypes = {
+  navigation: PropTypes.shape({
+    naviage: PropTypes.func
+  }).isRequired
+};
 
 export default Main;

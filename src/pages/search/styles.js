@@ -13,6 +13,14 @@ const styles = StyleSheet.create({
     borderBottomColor: 1,
     borderBottomColor: colors.secundary,
     paddingBottom: metrics.basePadding
+  },
+
+  searchInput: {
+    backgroundColor: colors.secundary,
+    borderRadius: metrics.baseRadius,
+    paddingHorizontal: metrics.basePadding,
+    height: 42,
+    color: colors.white
   }
 });
 

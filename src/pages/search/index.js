@@ -1,8 +1,9 @@
 import React from "react";
 
-import { View, TextInput } from "react-native";
+import { View, TextInput, FlatList } from "react-native";
 
 import styles from "./styles";
+import SongItem from "components/SongItem";
 
 const songs = [
   {
@@ -49,6 +50,12 @@ const search = () => (
         underlineColorAndroid="transparent"
       />
     </View>
+
+    <FlatList
+      data={songs}
+      keyExtractor={song => String(song.id)}
+      renderItem={({ item }) => <SongItem song={item} />}
+    />
   </View>
 );
 
