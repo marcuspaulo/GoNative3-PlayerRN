@@ -204,3 +204,9 @@ $ yarn add color
 ```sh
 $ yarn add react-native-iphone-x-helper
 ```
+
+# Testar a API, rodar o JSON-Server (Global)
+
+```sh
+$ yarn add json-server --global
+```

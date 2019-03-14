@@ -1,7 +1,7 @@
 import React from "react";
 
 import { View, ImageBackground, Text, FlatList } from "react-native";
-import { SongItem } from "components/SongItem";
+import SongItem from "components/SongItem";
 
 import styles from "./styles";
 

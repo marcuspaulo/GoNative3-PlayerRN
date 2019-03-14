@@ -13,7 +13,7 @@ const Routes = createAppContainer(
       Album: { screen: Album }
     },
     {
-      navigationOptions: {
+      defaultNavigationOptions: {
         headerStyle: {
           backgroundColor: colors.secundary,
           borderBottomWidth: 0
