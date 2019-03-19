@@ -1,7 +1,7 @@
 import React from "react";
 
 import { View, ImageBackground, Text, FlatList } from "react-native";
-import SongItem from "components/SongItem";
+import SongList from "components/SongList";
 
 import styles from "./styles";
 
@@ -21,11 +21,7 @@ const album = ({ navigation }) => {
         </View>
       </ImageBackground>
 
-      <FlatList
-        data={album.songs}
-        keyExtractor={song => String(song.id)}
-        renderItem={({ item }) => <SongItem song={item} />}
-      />
+      <SongList data={album.songs} />
     </View>
   );
 };

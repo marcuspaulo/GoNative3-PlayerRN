@@ -210,3 +210,41 @@ $ yarn add react-native-iphone-x-helper
 ```sh
 $ yarn add json-server --global
 ```
+
+# Instalando a dependência para o Estado do Redux imutável
+
+## Ou seja, para alterar um objeto, eu preciso fazer uma cópia dele (...state)
+
+### Se por exemplo, eu definir assim, o error, ele ficará nulo.
+
+#### (Não pode fazer a alterações no state)
+
+#### Se utilizar o 'use strict' - vai mostrar o erro de TypeError: Attempted to assign to readonly property.
+
+```js
+    case Types.GET_REQUEST:
+      state.error = 'ERROR';  // O resultado será null e não o que foi atribuido.
+      return { ...state, loading: true };
+```
+
+```sh
+$ yarn add seamless-immutable
+```
+
+---
+
+# Instalando a Biblioteca lodash - Serve para que o ele não busque a cada letra digitada e sim, quando o usuário parar de digitar por alguns milisegundos.
+
+```sh
+$ yarn add lodash
+```
+
+# Instalar Biblioteca para reproduzir Som
+
+```sh
+$ yarn add diego3g/react-native-sound
+```
+
+```sh
+$ react-native link react-native-sound
+```

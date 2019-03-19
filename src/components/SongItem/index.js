@@ -1,25 +1,47 @@
 import React from "react";
-import PropTyoes from "prop-types";
+import PropTypes from "prop-types";
 
-import { View, Text, TouchableOpacity } from "react-native";
+import { connect } from "react-redux";
+
+import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 import styles from "./styles";
 
-const SongItem = ({ song }) => (
-  <TouchableOpacity onPress={() => {}} style={styles.container}>
+const SongItem = ({ song, player, onPress }) => (
+  <TouchableOpacity onPress={onPress} style={styles.container}>
     <View style={styles.info}>
-      <Text style={styles.title}>{song.title}</Text>
+      <Text
+        style={[
+          styles.title,
+          player.currentSong.id === song.id ? styles.active : {}
+        ]}
+      >
+        {song.title}
+      </Text>
       <Text style={styles.author}>{song.author}</Text>
     </View>
-    <Icon name="play-circle-outline" size={24} style={styles.play} />
+    {player.loadingId === song.id ? (
+      <ActivityIndicator size="small" color="#999" style={styles.loading} />
+    ) : (
+      <Icon name="play-circle-outline" size={24} style={styles.play} />
+    )}
   </TouchableOpacity>
 );
 
 SongItem.propTypes = {
-  song: PropTyoes.shape({
-    title: PropTyoes.string,
-    author: PropTyoes.string
-  }).isRequired
+  song: PropTypes.shape({
+    title: PropTypes.string,
+    author: PropTypes.string
+  }).isRequired,
+  player: PropTypes.shape({
+    loading: PropTypes.bool
+  }).isRequired,
+  onPress: PropTypes.func.isRequired
 };
-export default SongItem;
+
+const mapStateToProps = state => ({
+  player: state.player
+});
+
+export default connect(mapStateToProps)(SongItem);

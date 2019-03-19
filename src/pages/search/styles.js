@@ -21,6 +21,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: metrics.basePadding,
     height: 42,
     color: colors.white
+  },
+
+  loading: {
+    marginTop: metrics.basePadding
   }
 });
 
