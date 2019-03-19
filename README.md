@@ -1,9 +1,39 @@
-# Projeto em React-Native - Com Navigation (Routes, Reactotron, Redux) Limpo
+# Projeto Spotify Clone em React-Native - Com Navigation (Routes, Reactotron, Redux)
+
+#Tela Inicial do Player
+![Lista de Repositórios](/images/SpotifyClone-List.png)
+
+#Tela Lista de Álbuns
+![Lista de Repositórios](/images/SpotifyClone-List-1.png)
+
+#Tela Lista de Álbuns
+![Lista de Repositórios](/images/SpotifyClone-List-2.png)
+
+#Tela com a pesquisa por músicas
+![Lista de Repositórios](/images/SpotifyClone-Search.png)
 
 # Criando um projeto em React-native
 
 ```sh
 $ react-native init PlayerRN
+```
+
+# Executando o projeto no iOS
+
+```sh
+$ react-native run-ios
+```
+
+# Executando o projeto no Android
+
+```sh
+$ react-native run-android
+```
+
+# Em caso de problemas, executar o comando para resetar o cache
+
+```sh
+$ react-native start --reset-cache
 ```
 
 ```sh
